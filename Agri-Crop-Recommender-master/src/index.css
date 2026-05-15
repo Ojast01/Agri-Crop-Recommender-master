@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-dark: #0a0a0a;
+    --bg-light: #f8fafc;
+    --text-dark: #f1f5f9;
+    --text-light: #0f172a;
+    --card-dark: #121212;
+    --card-light: #ffffff;
+  }
+
+  body {
+    @apply transition-colors duration-300;
+  }
+
+  body.dark {
+    @apply bg-dark text-gray-200 font-sans selection:bg-primary/30 selection:text-primary;
+  }
+
+  body.light {
+    background-color: var(--bg-light);
+    color: var(--text-light);
+    @apply font-sans selection:bg-primary/30 selection:text-primary;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+    color: inherit;
+  }
+
+  body.dark h1, body.dark h2, body.dark h3 {
+    @apply text-white;
+  }
+
+  body.light h1, body.light h2, body.light h3 {
+    @apply text-slate-900;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply backdrop-blur-xl border border-white/10 shadow-2xl;
+    @apply bg-dark-card/60;
+  }
+  
+  body.light .glass-card {
+    @apply bg-white/70 border-slate-200 shadow-xl;
+  }
+
+  .glass-input {
+    @apply bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary/50 transition-all duration-300 placeholder:text-gray-500;
+    @apply text-white;
+  }
+
+  body.light .glass-input {
+    @apply bg-slate-100 border-slate-200 text-slate-900 focus:border-primary/50;
+  }
+
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-dark font-semibold px-8 py-3 rounded-xl transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-primary/20;
+  }
+
+  .btn-outline {
+    @apply border border-white/20 hover:bg-white/5 text-white font-medium px-8 py-3 rounded-xl transition-all duration-300;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full hover:bg-white/20 transition-colors;
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}

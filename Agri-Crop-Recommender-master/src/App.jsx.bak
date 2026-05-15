@@ -1,0 +1,11 @@
+import React from 'react';
+
+function App() {
+  return (
+    <div style={{ backgroundColor: '#0a0a0a', color: 'white', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyCenter: 'center', fontSize: '2rem' }}>
+      AgriSmart is Loading...
+    </div>
+  );
+}
+
+export default App;
