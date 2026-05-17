@@ -8,7 +8,7 @@ const app = express();
 app.use(cors({ origin: "http://localhost:5173" }));
 app.use(express.json());
 
-mongoose.connect("mongodb://ojast01:Tyagi%40ojas01@ac-x1pn7os-shard-00-00.urjlcbj.mongodb.net:27017,ac-x1pn7os-shard-00-01.urjlcbj.mongodb.net:27017,ac-x1pn7os-shard-00-02.urjlcbj.mongodb.net:27017/healthcare?ssl=true&replicaSet=atlas-wbzs0k-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0")
+mongoose.connect("")
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.log("MongoDB Error:", err.message));
 
